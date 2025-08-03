@@ -1,23 +1,17 @@
-// src/routes/blog/+page.js
+import { client } from "$lib/contentful";
 
-/** @type {import('./$types').PageLoad} */
 export async function load() {
-  const posts = [
-    {
-      slug: "hello-world",
-      title: "Hello World",
-      excerpt: "This is my first blog post.",
-      date: "2025-08-01",
-    },
-    {
-      slug: "sveltekit-rocks",
-      title: "Why SvelteKit Rocks",
-      excerpt: "SvelteKit is fast and fun to use.",
-      date: "2025-08-02",
-    },
-  ];
-
+  const entries = await client.getEntries({
+    content_type: "blogPost",
+    order: "-fields.publishingDate",
+  });
   return {
-    posts,
+    posts: entries.items.map((item) => ({
+      slug: item.fields.slug,
+      title: item.fields.title,
+      content: item.fields.content,
+      coverImage: item.fields.coverImage?.fields.file.url,
+      publishingDate: item.fields.publishingDate,
+    })),
   };
 }

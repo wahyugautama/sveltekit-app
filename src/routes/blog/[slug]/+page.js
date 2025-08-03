@@ -1,26 +1,29 @@
-// src/routes/blog/[slug]/+page.js
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { client } from "$lib/contentful";
+import { error } from "@sveltejs/kit";
+
 export async function load({ params }) {
   const { slug } = params;
 
-  // Example: Simulated blog content (replace with fetch or file read)
-  const posts = {
-    "hello-world": {
-      title: "Hello World",
-      content: "This is my first blog post.",
-    },
-    "sveltekit-rocks": {
-      title: "Why SvelteKit Rocks",
-      content: "SvelteKit is fast and fun to use.",
-    },
-  };
+  const entries = await client.getEntries({
+    content_type: "blogPost",
+    "fields.slug[in]": [`${slug}`, `${slug}/`],
+    limit: 1,
+  });
 
-  const post = posts[slug];
-
-  if (!post) {
+  if (!entries.items.length) {
     throw error(404, "Post not found");
   }
 
+  const post = entries.items[0].fields;
+
   return {
-    post,
+    post: {
+      title: post.title,
+      content: documentToHtmlString(post.content), // ✅ convert rich text to HTML
+      slug: post.slug,
+      coverImage: post.coverImage?.fields.file.url,
+      publishingDate: post.publishingDate,
+    },
   };
 }
