@@ -1,19 +1,12 @@
 <script lang="ts">
-  import Navbar from '$lib/components/Navbar.svelte'
+
+  import Navbar from '$lib/components/Navbar.svelte';
   import '../app.css';
+  import Footer from '$lib/components/Footer.svelte';
+
+
 </script>
+
 <Navbar />
-
-<main>
-  <div class="page-container">
-    <slot />
-  </div>
-</main>
-
-<style>
-  .page-container {
-    min-height: 100vh;
-    will-change: opacity;
-	padding: 3rem;
-  }
-</style>
+      <slot />
+<Footer />

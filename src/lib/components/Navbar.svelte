@@ -25,6 +25,9 @@
   <li class:active={$currentPath === '/blog'}>
     <a href="/blog">Blog</a>
   </li>
+  <li class:active={$currentPath === '/contact'}>
+    <a href="/contact">Contact</a>
+  </li>
 </ul>
 
 </nav>
