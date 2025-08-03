@@ -1,9 +1,9 @@
 // src/routes/contact/+page.server.ts
 import type { Actions } from "@sveltejs/kit";
 import { Resend } from "resend";
-import { RESEND_API_KEY } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
-const resend = new Resend(RESEND_API_KEY);
+const resend = new Resend(env.RESEND_API_KEY);
 
 export const actions: Actions = {
   default: async ({ request }) => {
