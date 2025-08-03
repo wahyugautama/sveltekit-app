@@ -1,12 +1,9 @@
-<script lang="ts">
-
-  import Navbar from '$lib/components/Navbar.svelte';
+<script>
   import '../app.css';
+  import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
-
-
 </script>
 
-<Navbar />
+  <Navbar />
       <slot />
-<Footer />
+	  <Footer />
