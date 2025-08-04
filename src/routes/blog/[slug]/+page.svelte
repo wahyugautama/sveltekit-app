@@ -2,6 +2,7 @@
   import Wrapper from "$lib/components/Wrapper.svelte";
   import { onMount } from "svelte";
   import { browser } from "$app/environment";
+  import Link from "$lib/components/Link.svelte";
 
   export let data;
   const { post } = data;
@@ -30,7 +31,7 @@
 </script>
 
 <Wrapper paddingY="5rem">
-  <a href="/blog">All articles</a>
+  <Link text="All articles" href="/blog" />
   <article>
     <h1>{post.title}</h1>
     <p><em>{formattedDate}</em></p>

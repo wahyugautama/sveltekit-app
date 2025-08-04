@@ -1,11 +1,12 @@
 <script>
   import Wrapper from "$lib/components/Wrapper.svelte";
-
+  import { t } from "svelte-i18n";
   export let data;
 </script>
 
 <Wrapper paddingY="5rem">
-  <h1>Blog</h1>
+  <h1>{$t("blog.title")}</h1>
+  <p>{$t("blog.description")}</p>
 
   {#if data.posts.length === 0}
     <p>No posts available.</p>
@@ -31,10 +32,6 @@
 </Wrapper>
 
 <style>
-  h1 {
-    margin-bottom: 2rem;
-  }
-
   .post-grid {
     display: grid;
     gap: 2rem;

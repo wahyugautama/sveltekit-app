@@ -21,7 +21,8 @@
     "contentful": "^11.7.15",
     "gsap": "^3.13.0",
     "resend": "^4.7.0",
-    "svelte-carousel": "^1.0.25"
+    "svelte-carousel": "^1.0.25",
+    "svelte-i18n": "^4.0.1"
   },
   "engines": {
     "node": ">=20.19.0"

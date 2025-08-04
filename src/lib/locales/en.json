@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "about": {
+    "title": "About",
+    "description": "This is the about page."
+  },
+  "blog": {
+    "title": "Insights & Inspiration",
+    "description": "Welcome to my blog—your go-to resource for Webflow tutorials, design trends, and behind-the-scenes peeks at real client projects. Let’s explore how to make the web more engaging together."
+  }
+}
