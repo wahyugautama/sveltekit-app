@@ -2,6 +2,7 @@
   import FAQ from "$lib/components/FAQ.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import Tabs from "$lib/components/Tabs.svelte";
+  export let data;
   const tabData = [
     { label: "Introduction", content: "<p>Welcome to the intro tab!</p>" },
     {
@@ -28,6 +29,27 @@
     },
   ];
 </script>
+
+<svelte:head>
+  <title>{data.title}</title>
+  <meta name="description" content={data.description} />
+  <meta property="og:title" content={data.title} />
+  <meta property="og:description" content={data.description} />
+  <meta property="og:url" content={data.url} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href={data.url} />
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Sandikala Studio",
+      url: data.url,
+      description: data.description
+    })}
+  </script>
+</svelte:head>
 
 <Wrapper paddingY="small">
   <h1>About</h1>

@@ -13,41 +13,39 @@
   }
 </script>
 
-<Wrapper paddingY="small">
-  <nav class="navbar">
-    <div class="nav-brand">MyApp</div>
+<nav>
+  <Wrapper paddingY="small">
+    <div class="navbar">
+      <div class="nav-brand">MyApp</div>
 
-    <button class="nav-toggle" on:click={() => (isOpen = !isOpen)}>☰</button>
+      <button class="nav-toggle" on:click={() => (isOpen = !isOpen)}>☰</button>
 
-    <ul class:open={isOpen} class="nav-links">
-      <li class:active={$currentPath === "/"}>
-        <a href="/" on:click|preventDefault={() => navigateTo("/")}>Home</a>
-      </li>
-      <li class:active={$currentPath === "/about"}>
-        <a href="/about" on:click|preventDefault={() => navigateTo("/about")}
-          >About</a
-        >
-      </li>
-      <li class:active={$currentPath === "/blog"}>
-        <a href="/blog" on:click|preventDefault={() => navigateTo("/blog")}
-          >Blog</a
-        >
-      </li>
-      <li class:active={$currentPath === "/contact"}>
-        <a
-          href="/contact"
-          on:click|preventDefault={() => navigateTo("/contact")}>Contact</a
-        >
-      </li>
-    </ul>
-  </nav>
-</Wrapper>
+      <ul class:open={isOpen} class="nav-links">
+        <li class:active={$currentPath === "/"}>
+          <a href="/" on:click|preventDefault={() => navigateTo("/")}>Home</a>
+        </li>
+        <li class:active={$currentPath === "/about"}>
+          <a href="/about" on:click|preventDefault={() => navigateTo("/about")}
+            >About</a
+          >
+        </li>
+        <li class:active={$currentPath === "/blog"}>
+          <a href="/blog" on:click|preventDefault={() => navigateTo("/blog")}
+            >Blog</a
+          >
+        </li>
+        <li class:active={$currentPath === "/contact"}>
+          <a
+            href="/contact"
+            on:click|preventDefault={() => navigateTo("/contact")}>Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </Wrapper>
+</nav>
 
 <style>
-  nav.navbar {
-    view-transition-name: navbar;
-  }
-
   .navbar {
     display: flex;
     align-items: center;
@@ -81,7 +79,7 @@
   }
 
   .nav-links li.active a {
-    color: red;
+    color: aqua;
     border-bottom: 2px solid #00f0ff;
   }
 
@@ -94,9 +92,9 @@
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 72px;
+      top: 48px;
       left: 0;
-      background: #111;
+      background: grey;
       width: 100%;
       padding: 1rem;
       z-index: 10;
