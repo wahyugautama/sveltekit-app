@@ -17,12 +17,29 @@ export const actions: Actions = {
     }
 
     try {
-      // 1) SEND to the Resend sandbox inbox
       const { data: sent, error } = await resend.emails.send({
-        from: "onboarding@resend.dev", // ← valid “from”
+        from: `"${name}" <onboarding@resend.dev>`, // display the sender name
         to: "delivered@resend.dev",
-        subject: `Connectivity test from ${name}`,
-        html: `<strong>It works!</strong>`,
+        replyTo: email, // so you can reply directly to the user
+        subject: `New contact form submission from ${name}`,
+        // build the HTML body including all fields
+        html: `
+          <h2>Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, "<br/>")}</p>
+        `,
+        // optional: also include a plain-text fallback
+        text: `
+          Contact Form Submission
+
+          Name: ${name}
+          Email: ${email}
+
+          Message:
+          ${message}
+        `,
       });
 
       if (error) {
@@ -30,14 +47,14 @@ export const actions: Actions = {
         return { status: 500, errors: { server: "Test send failed" } };
       }
 
-      console.log("✅ Test email sent. ID:", sent.id); // now sent.id exists :contentReference[oaicite:0]{index=0}
+      console.log("✅ Email sent. ID:", sent.id);
 
-      // 2) RETRIEVE and log that email to confirm connectivity
+      // Retrieve it again to confirm payload
       try {
         const details = await resend.emails.get(sent.id);
-        console.log("📬 Retrieved test email details:", details);
+        console.log("📬 Retrieved email details:", details);
       } catch (fetchErr) {
-        console.error("❌ Could not fetch test email details:", fetchErr);
+        console.error("❌ Could not fetch email details:", fetchErr);
       }
 
       return { success: true };

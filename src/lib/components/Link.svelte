@@ -7,7 +7,7 @@
   let interval;
 
   const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:',.<>?/~`";
 
   function scrambleText() {
     let iterations = 0;
@@ -41,14 +41,12 @@
 
 <style>
   .link {
+    font-family: monospace;
+    text-transform: uppercase;
     text-decoration: none;
     color: inherit;
     position: relative;
     cursor: pointer;
     transition: color 0.2s;
-  }
-
-  .link:hover {
-    color: #0070f3;
   }
 </style>

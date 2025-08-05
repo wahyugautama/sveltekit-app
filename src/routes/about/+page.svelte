@@ -2,7 +2,6 @@
   import FAQ from "$lib/components/FAQ.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import Tabs from "$lib/components/Tabs.svelte";
-  import { t } from "svelte-i18n";
   const tabData = [
     { label: "Introduction", content: "<p>Welcome to the intro tab!</p>" },
     {
@@ -30,9 +29,8 @@
   ];
 </script>
 
-<Wrapper paddingY="5rem">
-  <h1>{$t("about.title")}</h1>
-  <p>{$t("about.description")}</p>
+<Wrapper paddingY="small">
+  <h1>About</h1>
   <FAQ {faqs} />
   <Tabs tabs={tabData} />
 </Wrapper>

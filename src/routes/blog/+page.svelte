@@ -1,12 +1,10 @@
 <script>
   import Wrapper from "$lib/components/Wrapper.svelte";
-  import { t } from "svelte-i18n";
   export let data;
 </script>
 
-<Wrapper paddingY="5rem">
-  <h1>{$t("blog.title")}</h1>
-  <p>{$t("blog.description")}</p>
+<Wrapper paddingY="medium">
+  <h1>Articles</h1>
 
   {#if data.posts.length === 0}
     <p>No posts available.</p>

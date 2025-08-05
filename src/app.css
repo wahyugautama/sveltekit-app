@@ -30,6 +30,8 @@ body {
   font-family: "Neue Montreal", system-ui, sans-serif;
   background: #fff;
   color: #111;
+  height: auto;
+  overflow: hidden;
 }
 
 a {

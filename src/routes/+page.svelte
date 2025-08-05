@@ -17,7 +17,7 @@
   });
 </script>
 
-<Wrapper paddingY="5rem">
+<Wrapper paddingY="small">
   <h1 bind:this={titleEl}>Hello with 5rem vertical padding</h1>
   <h1>Hello {name}!</h1>
   <input bind:value={name} placeholder="Enter your name" />

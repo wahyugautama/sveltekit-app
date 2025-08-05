@@ -30,7 +30,7 @@
   }
 </script>
 
-<Wrapper paddingY="5rem">
+<Wrapper paddingY="medium">
   <Link text="All articles" href="/blog" />
   <article>
     <h1>{post.title}</h1>
@@ -38,7 +38,7 @@
     {#if post.coverImage}
       <img src={post.coverImage} alt={post.title} width="100%" />
     {/if}
-    <div>{@html post.content}</div>
+    <div class="blog-content">{@html post.content}</div>
   </article>
 
   <div style="margin-top: 2rem;">
@@ -65,3 +65,27 @@
     </div>
   </div>
 </Wrapper>
+
+<style>
+  article {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .blog-content {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    margin-top: 1.5rem;
+    line-height: 1.4;
+    max-width: 65ch;
+  }
+
+  img {
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+</style>
