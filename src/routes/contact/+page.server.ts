@@ -3,8 +3,6 @@ import type { Actions } from "@sveltejs/kit";
 import { Resend } from "resend";
 import { env } from "$env/dynamic/private";
 
-const resend = new Resend(env.RESEND_API_KEY);
-
 export const actions: Actions = {
   default: async ({ request }) => {
     const form = await request.formData();
@@ -17,6 +15,7 @@ export const actions: Actions = {
     }
 
     try {
+      const resend = new Resend(env.RESEND_API_KEY);
       const { data: sent, error } = await resend.emails.send({
         from: `"${name}" <onboarding@resend.dev>`, // display the sender name
         to: "delivered@resend.dev",
