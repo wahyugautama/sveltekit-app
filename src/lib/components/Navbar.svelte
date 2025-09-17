@@ -3,6 +3,7 @@
   import { derived } from "svelte/store";
   import { goto } from "$app/navigation";
   import Wrapper from "./Wrapper.svelte";
+  import Navlink from "./Navlink.svelte";
 
   const currentPath = derived(page, ($page) => $page.url.pathname);
   let isOpen = false;
@@ -16,29 +17,19 @@
 <nav>
   <Wrapper paddingY="small">
     <div class="navbar">
-      <div class="nav-brand">MyApp</div>
+      <a href="/"><div class="nav-brand">Shapeshifter</div></a>
 
       <button class="nav-toggle" on:click={() => (isOpen = !isOpen)}>☰</button>
 
       <ul class:open={isOpen} class="nav-links">
-        <li class:active={$currentPath === "/"}>
-          <a href="/" on:click|preventDefault={() => navigateTo("/")}>Home</a>
-        </li>
         <li class:active={$currentPath === "/about"}>
-          <a href="/about" on:click|preventDefault={() => navigateTo("/about")}
-            >About</a
-          >
+          <Navlink text="About" link="/blog" />
         </li>
         <li class:active={$currentPath === "/blog"}>
-          <a href="/blog" on:click|preventDefault={() => navigateTo("/blog")}
-            >Blog</a
-          >
+          <Navlink text="Blog" link="/blog" />
         </li>
         <li class:active={$currentPath === "/contact"}>
-          <a
-            href="/contact"
-            on:click|preventDefault={() => navigateTo("/contact")}>Contact</a
-          >
+          <Navlink text="Contact" link="/contact" />
         </li>
       </ul>
     </div>
@@ -46,8 +37,18 @@
 </nav>
 
 <style>
+  nav {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
   .navbar {
     display: flex;
+
     align-items: center;
   }
 
@@ -71,16 +72,6 @@
     display: flex;
     gap: 1.5rem;
     list-style: none;
-  }
-
-  .nav-links li a {
-    color: black;
-    text-decoration: none;
-  }
-
-  .nav-links li.active a {
-    color: aqua;
-    border-bottom: 2px solid #00f0ff;
   }
 
   @media (max-width: 640px) {

@@ -48,13 +48,20 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 24px;
-    height: 24px;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     pointer-events: none;
     background-color: white;
     transform: translate3d(-50%, -50%, 0);
     z-index: 10000;
     mix-blend-mode: difference; /* optional: inverts color over backgrounds */
+  }
+
+  /* Hide cursor on screens 1024px wide or less (tablet & phone) */
+  @media (max-width: 1024px) {
+    .cursor {
+      display: none;
+    }
   }
 </style>
