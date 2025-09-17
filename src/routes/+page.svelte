@@ -18,17 +18,5 @@
 </script>
 
 <Wrapper paddingY="small">
-  <h1 bind:this={titleEl}>Hello with 5rem vertical padding</h1>
-  <h1>Hello {name}!</h1>
-  <input bind:value={name} placeholder="Enter your name" />
-
-  <CTA
-    heading="Ready to get started?"
-    description="Join us today and take your skills to the next level."
-    showButton={true}
-    buttonProps={{
-      buttonText: "Get Started",
-      link: "/contact",
-    }}
-  />
+  <h1>This site is repurposed for now</h1>
 </Wrapper>
