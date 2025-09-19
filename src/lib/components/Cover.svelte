@@ -12,12 +12,10 @@
   });
 </script>
 
-<Wrapper>
-  <div class="cover" bind:this={coverEl}>
-    <h1>This is a cover</h1>
-    <button bind:this={buttonEl}>Open invitation</button>
-  </div>
-</Wrapper>
+<div class="cover" bind:this={coverEl}>
+  <h1>This is a cover</h1>
+  <button bind:this={buttonEl}>Open invitation</button>
+</div>
 
 <style>
   .cover {

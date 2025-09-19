@@ -25,8 +25,8 @@
         <li class:active={$currentPath === "/about"}>
           <Navlink text="About" link="/blog" />
         </li>
-        <li class:active={$currentPath === "/blog"}>
-          <Navlink text="Blog" link="/blog" />
+        <li>
+          <Navlink text="FAQ" link="#faq" />
         </li>
         <li class:active={$currentPath === "/contact"}>
           <Navlink text="Contact" link="/contact" />

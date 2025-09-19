@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FAQ from "$lib/components/FAQ.svelte";
+  import FAQ from "$lib/components/SectionFAQ.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import Tabs from "$lib/components/Tabs.svelte";
   export let data;
@@ -53,6 +53,5 @@
 
 <Wrapper paddingY="small">
   <h1>About</h1>
-  <FAQ {faqs} />
   <Tabs tabs={tabData} />
 </Wrapper>

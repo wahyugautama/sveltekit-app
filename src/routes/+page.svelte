@@ -1,6 +1,8 @@
 <script>
   import Button from "$lib/components/Button.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
+  import SectionFAQ from "$lib/components/SectionFAQ.svelte";
+  import SectionRSVP from "$lib/components/SectionRSVP.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import Cover from "$lib/components/Cover.svelte";
 </script>
@@ -16,4 +18,6 @@
     for the reception. You will be ushered upon arrival. There is plenty of free
     parking at the venue or on the street.
   </p>
+  <SectionFAQ />
+  <SectionRSVP />
 </Wrapper>
