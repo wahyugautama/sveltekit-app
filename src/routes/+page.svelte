@@ -2,21 +2,18 @@
   import Button from "$lib/components/Button.svelte";
   import Wrapper from "$lib/components/Wrapper.svelte";
   import CTA from "$lib/components/CTA.svelte";
-  import { onMount } from "svelte";
-  import gsap from "gsap";
-
-  let name = "world";
-  let titleEl;
-  onMount(() => {
-    gsap.from(titleEl, {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: "power3.out",
-    });
-  });
+  import Cover from "$lib/components/Cover.svelte";
 </script>
 
 <Wrapper paddingY="small">
-  <h1>This site is repurposed for now</h1>
+  <h1>
+    The wedding celebration will be held at The Garden ROOm at Sleepy Ridge in
+    Orem, Utah.
+  </h1>
+  <p>
+    Please note that Sleepy Ridge is home to multiple reception areas. The
+    ceremony will be held at the Garden Patio before moving into the Garden Room
+    for the reception. You will be ushered upon arrival. There is plenty of free
+    parking at the venue or on the street.
+  </p>
 </Wrapper>

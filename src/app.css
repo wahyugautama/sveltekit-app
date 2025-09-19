@@ -11,8 +11,8 @@
 }
 
 @font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/NeueMontreal-Regular.woff2") format("woff2");
+  font-family: "Della Respira";
+  src: url("/fonts/DellaRespira-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -27,9 +27,9 @@
 html,
 body {
   height: 100%;
-  font-family: "Neue Montreal", system-ui, sans-serif;
-  background: #fff;
-  color: #111;
+  font-family: "Della Respira", serif;
+  background: #effdff;
+  color: #0055dd;
   height: auto;
   overflow: hidden;
 }
@@ -51,6 +51,13 @@ button {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  line-height: 1;
+}
 /* Heading scale using your --step variables */
 h1 {
   font-size: var(--step-5);
