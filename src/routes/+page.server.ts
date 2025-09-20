@@ -2,10 +2,7 @@
 import type { Actions } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { Resend } from "resend";
-import { RESEND_API_KEY, RSVP_FROM, RSVP_TO } from "$env/static/private";
-// Or use $env/dynamic/private if you need runtime-injected envs instead of statically replaced ones.
-
-const resend = new Resend(RESEND_API_KEY);
+import { env } from "$env/dynamic/private"; // <-- dynamic runtime env
 
 export const actions: Actions = {
   default: async ({ request }) => {
@@ -17,11 +14,22 @@ export const actions: Actions = {
     const errors: Record<string, string> = {};
     if (!name) errors.name = "Name is required";
     if (!attending) errors.attending = "Please select yes or no";
+    if (Object.keys(errors).length) return fail(400, { errors });
 
-    if (Object.keys(errors).length) {
-      // Tells enhance() this is a validation failure
-      return fail(400, { errors });
+    // Read secrets at runtime (Netlify Functions)
+    const RESEND_API_KEY = env.RESEND_API_KEY;
+    const RSVP_FROM = env.RSVP_FROM || "onboarding@resend.dev"; // use your verified domain in prod
+    const RSVP_TO = (env.RSVP_TO || "delivered@resend.dev")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    if (!RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY");
+      return fail(500, { errors: { form: "Server misconfigured." } });
     }
+
+    const resend = new Resend(RESEND_API_KEY);
 
     const subject = `RSVP: ${name} — attending: ${attending}, plus-one: ${plusOne ?? "n/a"}`;
     const html = `
@@ -37,22 +45,23 @@ Plus one: ${plusOne ?? "-"}`;
 
     try {
       const { data, error } = await resend.emails.send({
-        from: RSVP_FROM || "onboarding@resend.dev", // Prefer a verified domain!
-        to: RSVP_TO ? [RSVP_TO] : ["delivered@resend.dev"], // For live use, set RSVP_TO in .env
+        from: RSVP_FROM,
+        to: RSVP_TO,
         subject,
         html,
         text,
-        replyTo: RSVP_FROM,
+        // If you collect an email in the RSVP form, set replyTo to that instead:
+        // replyTo: form.get('email')?.toString(),
       });
 
-      if (error) {
+      if (error || !data?.id) {
         console.error("Resend error:", error);
         return fail(500, {
           errors: { form: "Email failed to send. Please try again." },
         });
       }
 
-      console.log("RSVP email sent, id:", data?.id);
+      console.log("RSVP email sent, id:", data.id);
       return { success: true };
     } catch (e) {
       console.error("Unexpected send error:", e);
