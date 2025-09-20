@@ -37,16 +37,36 @@
       {/if}
     </label>
 
+    <!-- Attendance -->
     <fieldset>
       <legend>Will you be attending? *</legend>
-      <label class="radio-tag">
+      <label>
         <input type="radio" name="attending" value="yes" required />
         Yes
       </label>
-      <label class="radio-tag">
+      <label>
         <input type="radio" name="attending" value="no" />
         No
       </label>
+      {#if errors.attending}
+        <p class="error">{errors.attending}</p>
+      {/if}
+    </fieldset>
+
+    <!-- Plus one -->
+    <fieldset>
+      <legend>Will you be bringing a plus-one?</legend>
+      <label>
+        <input type="radio" name="plusOne" value="yes" />
+        Yes
+      </label>
+      <label>
+        <input type="radio" name="plusOne" value="no" />
+        No
+      </label>
+      {#if errors.plusOne}
+        <p class="error">{errors.plusOne}</p>
+      {/if}
     </fieldset>
 
     <button type="submit" disabled={status === "sending"}>
@@ -105,37 +125,8 @@
     margin-bottom: 0.25rem;
   }
 
-  /* Hide the native radio */
   input[type="radio"] {
-    display: none;
-  }
-
-  /* Base tag style */
-  .radio-tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
     margin-right: 0.5rem;
-    border: 2px solid #ccc;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.2s ease;
-  }
-
-  /* Hover effect */
-  .radio-tag:hover {
-    border-color: #0070f3;
-    color: #0070f3;
-  }
-
-  /* Checked state (style the label if its radio is checked) */
-  input[type="radio"]:checked + span,
-  input[type="radio"]:checked + label {
-    background-color: #0070f3;
-    border-color: #0070f3;
-    color: white;
   }
 
   button {
