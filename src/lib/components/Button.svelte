@@ -1,9 +1,9 @@
 <script>
-  export let buttonText = 'Click me';
-  export let link = '#';
+  export let buttonText = "Click me";
+  export let link = "#";
 </script>
 
-<a href={link} class="btn">
+<a href={link} class="btn" target="_blank">
   {buttonText}
 </a>
 
