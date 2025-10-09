@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import ArcText from "./Arc.svelte";
-
+  import { fadeOnView } from "$lib/actions/fadeOnView.js";
   // Target wedding date
   const weddingDate = new Date("2025-11-10T00:00:00");
 
@@ -36,9 +36,9 @@
   const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=Lukluk,+Badung,+Bali`;
 </script>
 
-<div class="section-date">
+<section id="date" class="section-date">
   <ArcText text="WEDDING DATE" />
-  <h3>November 10, 2025</h3>
+  <h3 use:fadeOnView={{ split: "chars", stagger: 0.05 }}>November 10, 2025</h3>
 
   <span class="countdown">
     {days}d {hours}h {minutes}m {seconds}s
@@ -47,7 +47,7 @@
   <button on:click={() => window.open(gcalUrl, "_blank")}>
     Add to Google Calendar
   </button>
-</div>
+</section>
 
 <style>
   .section-date {

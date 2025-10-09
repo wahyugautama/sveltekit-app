@@ -3,23 +3,31 @@
   export let link = "#";
 </script>
 
-<a href={link} class="btn" target="_blank">
-  {buttonText}
-</a>
+<div class="button-wrapper">
+  <a href={link} class="btn" target="_blank">
+    {buttonText}
+  </a>
+</div>
 
 <style>
+  .button-wrapper {
+    border: 1px solid #0070f3;
+    width: fit-content;
+  }
   .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #111;
-    color: white;
-    border-radius: 6px;
+    padding: 1rem 2rem;
+    border: 1px solid #0070f3;
+    color: #0070f3;
+    text-transform: uppercase;
+    border-radius: 10rem;
     font-weight: 500;
     text-decoration: none;
     transition: background 0.2s ease;
   }
 
   .btn:hover {
-    background-color: #333;
+    background-color: #0070f3;
+    color: white;
   }
 </style>
