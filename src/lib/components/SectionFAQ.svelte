@@ -2,14 +2,17 @@
   // Example FAQ data
   let faqs = [
     {
+      no: "001",
       question: "When is the event?",
       answer: "The event will be held on Saturday, October 12th at 4:00 PM.",
     },
     {
+      no: "002",
       question: "Where is the venue?",
       answer: "The venue is at The Garden Room, Sleepy Ridge in Orem, Utah.",
     },
     {
+      no: "003",
       question: "Is parking available?",
       answer: "Yes, free parking is available at the venue and nearby streets.",
     },
@@ -24,10 +27,11 @@
 </script>
 
 <section id="faq" class="faq">
-  <h2>Frequently Asked Questions</h2>
+  <h2><span class="script">Frequently<br /></span> Asked Questions</h2>
   <ul>
     {#each faqs as faq, i}
       <li class="faq-item">
+        <p>{faq.no}</p>
         <button class="faq-question" on:click={() => toggleFAQ(i)}>
           {faq.question}
         </button>
@@ -41,7 +45,6 @@
 
 <style>
   .faq {
-    max-width: 600px;
     margin: 2rem auto;
     padding: 1rem;
   }
@@ -53,6 +56,7 @@
 
   .faq-item {
     margin-bottom: 1rem;
+    display: flex;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.5rem;
   }

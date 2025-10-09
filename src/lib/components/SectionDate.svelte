@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import ArcText from "./Arc.svelte";
   import { fadeOnView } from "$lib/actions/fadeOnView.js";
+  import HeadSVG from "./HeadSVG.svelte";
+  import Button from "./Button.svelte";
   // Target wedding date
   const weddingDate = new Date("2025-11-10T00:00:00");
 
@@ -37,19 +38,30 @@
 </script>
 
 <section id="date" class="section-date">
-  <ArcText text="WEDDING DATE" />
-  <h3 use:fadeOnView={{ split: "chars", stagger: 0.05 }}>November 10, 2025</h3>
+  <HeadSVG width="7.5rem" />
 
-  <span class="countdown">
+  <span class="script">Wedding Date</span>
+  <h3 use:fadeOnView={{ split: "chars", stagger: 0.05 }}>Nov 10, 2025</h3>
+
+  <p class="countdown">
     {days}d {hours}h {minutes}m {seconds}s
-  </span>
-
-  <button on:click={() => window.open(gcalUrl, "_blank")}>
-    Add to Google Calendar
-  </button>
+  </p>
+  <div class="wrapper">
+    <div class="schedule">
+      <p class="time">06:00</p>
+      <h4>Ceremony</h4>
+    </div>
+    <div class="schedule">
+      <p class="time">12:00-20:00</p>
+      <h4>Reception</h4>
+    </div>
+    <button on:click={() => window.open(gcalUrl, "_blank")}>
+      Add to Google Calendar
+    </button>
+  </div>
 </section>
 
-<style>
+<style scoped>
   .section-date {
     display: flex;
     flex-direction: column;
@@ -58,21 +70,24 @@
     gap: 0.5rem;
     min-height: 100vh;
   }
-  .countdown {
-    font-family: monospace;
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
+
+  .wrapper {
+    width: 30vw;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
   }
-  button {
-    background: #d6336c;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
+
+  .schedule {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-top: 1px solid pink;
   }
-  button:hover {
-    background: #b82b5c;
+
+  .schedule .time {
+    padding: 0.5rem 0;
+    border-top: 1px solid blue;
   }
 </style>
