@@ -102,3 +102,20 @@ p {
   max-width: 55ch;
   text-transform: uppercase;
 }
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* auto, thin, or none */
+  scrollbar-color: #0055dd #1e1e1e; /* thumb, track */
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a90e2;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}

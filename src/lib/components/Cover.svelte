@@ -1,6 +1,7 @@
 <script>
   import Wrapper from "./Wrapper.svelte";
   import { onMount } from "svelte";
+  import { gsap } from "gsap";
 
   let coverEl;
   let buttonEl;
@@ -10,19 +11,26 @@
     // Prevent scrolling while cover is active
     document.body.style.overflow = "hidden";
 
-    // Read ?guest=<Name> from the URL
+    // Read ?guest=<Name> from URL
     try {
       const params = new URLSearchParams(window.location.search);
       const g = params.get("guest");
       if (g && g.trim()) guestName = decodeURIComponent(g.trim());
-    } catch (_) {
-      // ignore if URLSearchParams is unavailable
-    }
+    } catch (_) {}
 
+    // 🟢 Click handler to animate cover away
     const handleClick = () => {
-      coverEl.style.display = "none";
-      // Re-enable scrolling when cover is hidden
-      document.body.style.overflow = "";
+      gsap.to(coverEl, {
+        y: "-100%",
+        duration: 1.5,
+        ease: "expo.inOut",
+        onComplete: () => {
+          // Hide the element after animation
+          coverEl.style.display = "none";
+          // Re-enable scrolling when cover is hidden
+          document.body.style.overflow = "";
+        },
+      });
     };
 
     buttonEl?.addEventListener("click", handleClick);
@@ -32,7 +40,6 @@
 
 <div class="cover" bind:this={coverEl} aria-label="Invitation cover">
   <h1 class="title">Wahyu &amp; Novi</h1>
-
   <p class="to">to: {guestName}</p>
 
   <div class="details">
@@ -66,6 +73,9 @@
     gap: 0.75rem;
     padding: 2rem;
     z-index: 9999;
+    /* for GSAP starting positions */
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .title {

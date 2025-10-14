@@ -41,8 +41,8 @@
 
 <section id="rsvp">
   <Wrapper paddingY="large">
-    <h1>RSVP</h1>
-    <p>Please let us know if you’ll be joining us!</p>
+    <span class="script">Celebrate</span>
+    <h3>With us</h3>
 
     <form method="POST" use:enhance={enhancer} class="rsvp-form">
       <!-- Name -->
