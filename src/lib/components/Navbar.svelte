@@ -1,7 +1,4 @@
 <script lang="ts">
-  import Wrapper from "./Wrapper.svelte";
-  import Logo from "./Logo.svelte";
-
   // Smooth scroll with offset (in case the fixed navbar hides top content)
   function smoothAnchor(e: MouseEvent) {
     const a = e.currentTarget as HTMLAnchorElement;
@@ -9,6 +6,18 @@
     if (!href || !href.startsWith("#")) return;
 
     e.preventDefault();
+
+    // Blur animation
+    const pageWrapper = document.querySelector(".page-wrapper") as HTMLElement;
+    if (pageWrapper) {
+      pageWrapper.style.transition = "all 0.3s ease";
+      pageWrapper.style.filter = "blur(.5rem)";
+
+      // Remove blur after animation
+      setTimeout(() => {
+        pageWrapper.style.filter = "none";
+      }, 300);
+    }
     const el = document.querySelector(href);
     if (el) {
       const navHeight = 64; // adjust to your nav height in px

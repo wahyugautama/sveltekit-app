@@ -37,6 +37,7 @@
 .script {
   font-family: "Mrs Saint Delafield", cursive;
   text-transform: capitalize;
+  line-height: 0.5;
   font-size: var(--step-4);
 }
 
@@ -65,19 +66,13 @@ ul {
   padding: 0;
 }
 
-button {
-  font: inherit;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
 h1,
 h2,
 h3 {
   text-transform: uppercase;
   letter-spacing: -0.005em;
   line-height: 1;
+  font-weight: 300;
 }
 /* Heading scale using your --step variables */
 h1 {

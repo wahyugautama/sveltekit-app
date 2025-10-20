@@ -9,8 +9,8 @@
   import Ornament from "$lib/components/Ornament.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import Cover from "$lib/components/Cover.svelte";
-  import ArcText from "$lib/components/Arc.svelte";
   import SectionLocation from "$lib/components/SectionLocation.svelte";
+  import SectionImage from "$lib/components/SectionImage.svelte";
 </script>
 
 <SectionHero />
@@ -18,56 +18,6 @@
 <SectionStory />
 <SectionDate />
 <SectionLocation />
-<div class="btn-flip">
-  <button class="flip-1">wedding location</button>
-  <button class="flip-2">get direction</button>
-</div>
+<SectionImage />
 <SectionFAQ />
 <SectionRSVP />
-
-<style scoped>
-  .btn-flip {
-    position: relative;
-    display: flex;
-    width: 20rem;
-    flex-direction: column;
-    perspective: 600px; /* adds 3D depth */
-    cursor: pointer;
-  }
-
-  .flip-1,
-  .flip-2 {
-    text-transform: uppercase;
-    height: 3rem;
-    letter-spacing: 0.05em;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    backface-visibility: hidden;
-  }
-
-  .flip-1 {
-    background-color: pink;
-    transform-origin: top;
-    transform: rotateX(0deg);
-  }
-
-  .flip-2 {
-    background-color: black;
-    color: aliceblue;
-    position: absolute;
-    top: 0;
-    transform-origin: bottom;
-    transform: rotateX(-90deg);
-  }
-
-  .btn-flip:hover .flip-1 {
-    transform: rotateX(180deg);
-  }
-
-  .btn-flip:hover .flip-2 {
-    transform: rotateX(0deg);
-  }
-</style>

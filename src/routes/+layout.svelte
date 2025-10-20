@@ -40,11 +40,4 @@
   <Cover />
   <Navbar />
   <slot />
-  <Footer />
 </div>
-
-<style>
-  .page-wrapper {
-    padding-top: 4rem;
-  }
-</style>

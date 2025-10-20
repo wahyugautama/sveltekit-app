@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fadeOnView } from "$lib/actions/fadeOnView.js";
-  import HeadSVG from "./HeadSVG.svelte";
   import Button from "./Button.svelte";
+  import HeadSVG from "./HeadSVG.svelte";
   // Target wedding date
   const weddingDate = new Date("2025-11-10T00:00:00");
 
@@ -32,9 +32,6 @@
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   });
-
-  // Google Calendar event link (all-day event on Nov 10, 2025)
-  const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=Lukluk,+Badung,+Bali`;
 </script>
 
 <section id="date" class="section-date">
@@ -55,9 +52,10 @@
       <p class="time">12:00-20:00</p>
       <h4>Reception</h4>
     </div>
-    <button on:click={() => window.open(gcalUrl, "_blank")}>
-      Add to Google Calendar
-    </button>
+    <Button
+      buttonText="save the date"
+      link="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=Lukluk,+Badung,+Bali"
+    />
   </div>
 </section>
 
@@ -74,20 +72,36 @@
   .wrapper {
     width: 30vw;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      width: 90%;
+    }
   }
 
   .schedule {
     display: flex;
     align-items: top;
+    flex-grow: 1;
+    width: 100%;
     justify-content: space-between;
     gap: 0.5rem;
-    border-top: 1px solid pink;
+    border-top: 1px solid #a8c4f0;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
   }
 
   .schedule .time {
     padding: 0.5rem 0;
-    border-top: 1px solid blue;
+    border-top: 1px solid #0f5ad0;
   }
 </style>

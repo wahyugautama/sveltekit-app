@@ -39,6 +39,7 @@
 </script>
 
 <div class="cover" bind:this={coverEl} aria-label="Invitation cover">
+  <span class="script">The wedding of</span>
   <h1 class="title">Wahyu &amp; Novi</h1>
   <p class="to">to: {guestName}</p>
 

@@ -48,11 +48,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     pointer-events: none;
-    background-color: white;
+    border: 1px solid yellow;
     transform: translate3d(-50%, -50%, 0);
     z-index: 10000;
     mix-blend-mode: difference; /* optional: inverts color over backgrounds */
