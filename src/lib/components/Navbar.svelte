@@ -71,7 +71,7 @@
     left: 1rem;
     right: 1rem;
     z-index: 1000;
-    border: 1px solid blue;
+    border: 1px solid #0f5ad0;
     border-right: none;
   }
 
@@ -83,7 +83,7 @@
     font-size: 0.75rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid blue;
+    border: 1px solid #0f5ad0;
   }
   .nav-links {
     display: flex;
@@ -97,13 +97,13 @@
     text-transform: uppercase;
     font-weight: 500;
     transition: color 0.2s ease;
-    border-right: 1px solid blue;
-    border-left: 1px solid blue;
+    border-right: 1px solid #0f5ad0;
+    border-left: 1px solid #0f5ad0;
     flex-grow: 1;
   }
 
   .nav-links a:hover {
-    background-color: blue;
+    background-color: #0f5ad0;
     color: white;
   }
 
@@ -111,5 +111,11 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+    }
   }
 </style>

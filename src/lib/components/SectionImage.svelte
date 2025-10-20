@@ -2,7 +2,7 @@
   <div class="img-content">
     <h2>The</h2>
     <h2>Journey</h2>
-    <div class="img-container">B</div>
+    <div class="img-container"></div>
 
     <h2>Continues</h2>
   </div>

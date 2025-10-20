@@ -72,7 +72,7 @@
   }
 </script>
 
-<Wrapper paddingY="large" />
+<Wrapper paddingY="x-large" />
 <section id="faq" class="faq">
   <span class="script">Frequently</span>
   <h2 use:fadeOnView={{ split: "lines", stagger: 0.05 }}>Asked Questions</h2>
@@ -149,6 +149,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
     justify-content: center;
   }
   .faq h2 {
@@ -162,7 +163,7 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
     gap: 2rem;
-    width: 90%;
+    width: 50%;
   }
 
   .faq-line {
@@ -227,5 +228,11 @@
     margin-top: 0.5rem;
     color: #0f5ad0;
     font-size: 0.825rem;
+  }
+
+  @media (max-width: 768px) {
+    .faq-list {
+      width: 90%;
+    }
   }
 </style>

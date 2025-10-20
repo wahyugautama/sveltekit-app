@@ -36,36 +36,42 @@
 
 <section id="date" class="section-date">
   <HeadSVG width="7.5rem" />
-
-  <span class="script">Wedding Date</span>
-  <h3 use:fadeOnView={{ split: "chars", stagger: 0.05 }}>Nov 10, 2025</h3>
+  <div style="text-align: center;">
+    <span class="script">Wedding Date</span>
+    <h2 id="big" use:fadeOnView={{ split: "chars", stagger: 0.05 }}>
+      Nov 10, 2025
+    </h2>
+  </div>
 
   <p class="countdown">
-    {days}d {hours}h {minutes}m {seconds}s
+    {days}d: {hours}h: {minutes}m: {seconds}s
   </p>
   <div class="wrapper">
     <div class="schedule">
-      <p class="time">06:00</p>
+      <p class="time">06:00 WITA</p>
       <h4>Ceremony</h4>
     </div>
     <div class="schedule">
-      <p class="time">12:00-20:00</p>
+      <p class="time">13:00 wita - done</p>
       <h4>Reception</h4>
     </div>
-    <Button
-      buttonText="save the date"
-      link="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=Lukluk,+Badung,+Bali"
-    />
   </div>
+  <Button
+    buttonText="save the date"
+    link="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=Lukluk,+Badung,+Bali"
+  />
 </section>
 
 <style scoped>
+  #big {
+    font-size: 6rem;
+  }
   .section-date {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 3rem;
     min-height: 100vh;
   }
 
@@ -103,5 +109,11 @@
   .schedule .time {
     padding: 0.5rem 0;
     border-top: 1px solid #0f5ad0;
+  }
+
+  @media (max-width: 768px) {
+    #big {
+      font-size: 3.5rem;
+    }
   }
 </style>

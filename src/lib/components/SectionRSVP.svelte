@@ -42,8 +42,8 @@
 
 <section id="rsvp">
   <div class="footer left">
-    <HeadSVG width="7.5rem" />
-    <div class="img-container">B</div>
+    <HeadSVG width="8rem" />
+    <div class="img-container"></div>
     <div>
       <svg
         width="75"
@@ -72,13 +72,14 @@
     </div>
   </div>
   <div class="footer right">
-    <span class="script">Celebrate</span>
-    <h3>With us</h3>
-    <Checkers width="10rem" />
+    <div>
+      <span class="script">Celebrate</span>
+      <h2>With us</h2>
+    </div>
     <form method="POST" use:enhance={enhancer} class="rsvp-form">
       <!-- Name -->
       <label class="field">
-        <span class="label">Name *</span>
+        <span class="label">what's your name?</span>
         <input name="name" type="text" required placeholder="Your name" />
         {#if errors.name}
           <p class="error">{errors.name}</p>
@@ -87,7 +88,7 @@
 
       <!-- Attendance -->
       <fieldset class="pill-group">
-        <legend>Will you be attending? *</legend>
+        <legend>Will you be attending?</legend>
 
         <label class="pill">
           <input
@@ -146,9 +147,42 @@
         {/if}
       </fieldset>
 
-      <button type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Submitting…" : "Submit RSVP"}
-      </button>
+      <div class="button-wrapper">
+        <svg
+          width="16"
+          height="100%"
+          viewBox="0 0 16 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="8" height="8" fill="currentColor" />
+          <rect y="16" width="8" height="8" fill="currentColor" />
+          <rect y="32" width="8" height="8" fill="currentColor" />
+          <rect x="8" y="8" width="8" height="8" fill="currentColor" />
+          <rect x="8" y="24" width="8" height="8" fill="currentColor" />
+          <rect x="8" y="40" width="8" height="8" fill="currentColor" />
+          <path d="M16 0V48H0V0H16ZM1 47H15V1H1V47Z" fill="currentColor" />
+        </svg>
+
+        <button type="submit" class="btn" disabled={status === "sending"}>
+          {status === "sending" ? "Submitting…" : "Submit RSVP"}
+        </button>
+        <svg
+          width="16"
+          height="100%"
+          viewBox="0 0 16 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="8" height="8" fill="currentColor" />
+          <rect y="16" width="8" height="8" fill="currentColor" />
+          <rect y="32" width="8" height="8" fill="currentColor" />
+          <rect x="8" y="8" width="8" height="8" fill="currentColor" />
+          <rect x="8" y="24" width="8" height="8" fill="currentColor" />
+          <rect x="8" y="40" width="8" height="8" fill="currentColor" />
+          <path d="M16 0V48H0V0H16ZM1 47H15V1H1V47Z" fill="currentColor" />
+        </svg>
+      </div>
     </form>
 
     {#if status === "success"}
@@ -158,6 +192,11 @@
     {:else if status === "error"}
       <p class="error">❌ Oops, something went wrong.</p>
     {/if}
+    <span
+      >(C) 2025
+      <br />WEBSITE BY
+      <a href="www.sandikalastudio.com" target="_blank">SANDIKALA STUDIO</a>
+    </span>
   </div>
 </section>
 
@@ -178,16 +217,17 @@
   }
 
   .footer {
+    text-align: center;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
   }
 
   .footer.right {
     background-color: #0f5ad0;
-    color: white;
   }
 
   .footer.left {
@@ -212,20 +252,27 @@
   }
 
   input[type="text"] {
-    padding: 0.75rem 1rem;
+    padding: 0 1rem;
     font-size: 1rem;
     color: white;
     text-align: center;
     background-color: transparent;
     border: #0f5ad0 1px solid;
-    font-family: inherit;
+    font-family: "Della Respira";
+    text-transform: uppercase;
     transition:
       border-color 0.2s ease,
       box-shadow 0.2s ease;
   }
+
   input[type="text"]:focus {
     border-color: white;
     outline: none;
+  }
+
+  input[type="text"]::placeholder {
+    color: white; /* blue */
+    opacity: 0.5;
   }
 
   fieldset {
@@ -288,16 +335,39 @@
   }
 
   .error {
-    color: #c00;
+    color: rgb(253, 253, 253);
     font-size: 0.9rem;
   }
   .success {
-    color: #0a7c2f;
+    color: rgb(255, 255, 255);
     font-size: 0.95rem;
     margin-top: 1rem;
   }
 
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid #0f5ad0;
+    color: #0f5ad0;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn:hover {
+    background-color: #0f5ad0;
+    color: white;
+  }
+
   @media (max-width: 768px) {
+    .btn {
+      padding: 0.75rem 1.5rem;
+    }
     #rsvp {
       flex-direction: column-reverse;
       height: auto;
@@ -305,6 +375,8 @@
     .footer {
       width: 100%;
       padding: 4rem 0;
+      min-height: 100vh;
+      justify-content: space-around;
     }
   }
 </style>

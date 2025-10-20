@@ -97,4 +97,10 @@
     background-color: white;
     color: #0f5ad0;
   }
+
+  @media (max-width: 768px) {
+    .btn {
+      padding: 0.75rem 1.5rem;
+    }
+  }
 </style>
