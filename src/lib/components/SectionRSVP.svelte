@@ -192,7 +192,7 @@
     {:else if status === "error"}
       <p class="error">❌ Oops, something went wrong.</p>
     {/if}
-    <span
+    <span style="font-size: .75rem;"
       >(C) 2025
       <br />WEBSITE BY
       <a href="www.sandikalastudio.com" target="_blank">SANDIKALA STUDIO</a>
@@ -237,10 +237,12 @@
     background-repeat: no-repeat;
   }
   .rsvp-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1.25rem;
-    max-width: 560px;
-    margin-top: 1.5rem;
+    max-width: 30rem;
+    margin: 5rem 0;
   }
 
   .field {
@@ -351,17 +353,19 @@
   }
   .btn {
     display: inline-block;
+    font-family: "Della Respira";
     padding: 1rem 2rem;
-    border: 1px solid #0f5ad0;
-    color: #0f5ad0;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
     text-transform: uppercase;
     text-decoration: none;
     transition: all 0.2s ease;
   }
 
   .btn:hover {
-    background-color: #0f5ad0;
-    color: white;
+    background-color: white;
+    color: #0f5ad0;
   }
 
   @media (max-width: 768px) {
