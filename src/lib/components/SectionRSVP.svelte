@@ -1,7 +1,6 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
   import HeadSVG from "./HeadSVG.svelte";
-  import Checkers from "./Checkers.svelte";
 
   let status: "idle" | "sending" | "success" | "error" = "idle";
   let errors: Record<string, string> = {};
@@ -43,7 +42,9 @@
 <section id="rsvp">
   <div class="footer left">
     <HeadSVG width="8rem" />
-    <div class="img-container"></div>
+    <div class="img-container">
+      <img src="/images/footer-bg.webp" alt="" class="img-parallax" />
+    </div>
     <div>
       <svg
         width="75"
@@ -195,7 +196,9 @@
     <span style="font-size: .75rem;"
       >(C) 2025
       <br />WEBSITE BY
-      <a href="www.sandikalastudio.com" target="_blank">SANDIKALA STUDIO</a>
+      <a href="https://www.sandikalastudio.com" target="_blank"
+        >SANDIKALA STUDIO</a
+      >
     </span>
   </div>
 </section>
@@ -214,6 +217,13 @@
     aspect-ratio: 1 / 1;
     border: 0.5rem solid white;
     margin: 4rem;
+    overflow: hidden;
+  }
+
+  .img-parallax {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
   }
 
   .footer {
@@ -231,7 +241,7 @@
   }
 
   .footer.left {
-    background-image: url("../assets/MAN06945.jpeg");
+    background-image: url("/images/footer-bg.webp");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

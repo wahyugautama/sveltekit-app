@@ -42,17 +42,13 @@
 <div class="cover" bind:this={coverEl} aria-label="Invitation cover">
   <span class="script">The wedding of</span>
   <h1 class="title">Wahyu &amp; Novi</h1>
+  <p class="date">10 November 2025</p>
   <div class="divider">
     <hr />
     <div class="img-container"></div>
     <hr />
   </div>
   <p class="to">to: {guestName}</p>
-
-  <div class="details">
-    <p class="date">10 November 2025</p>
-    <p class="location">Br. Delod Pempatan, Lukluk, Mengwi, Badung</p>
-  </div>
   <div class="button-wrapper">
     <svg
       width="16"
@@ -160,13 +156,9 @@
   .to {
     margin: 0 0 0.75rem;
     font-size: 1rem;
+    font-family: "Della Respira";
+    text-transform: uppercase;
     opacity: 0.9;
-  }
-
-  .details {
-    display: grid;
-    gap: 0.25rem;
-    margin-bottom: 1rem;
   }
 
   .img-container {
@@ -177,8 +169,7 @@
     border: 0.5rem solid white;
   }
 
-  .date,
-  .location {
+  .date {
     margin: 0;
     font-size: 1rem;
   }

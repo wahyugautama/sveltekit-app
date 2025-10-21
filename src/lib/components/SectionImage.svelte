@@ -6,7 +6,7 @@
 
     <h2>Continues</h2>
   </div>
-  <img src="src/lib/assets/MAN06945.jpeg" alt="" class="img-full" />
+  <img src="/images/section-img.webp" alt="" class="img-full" />
 </section>
 
 <style scoped>
@@ -19,6 +19,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
   }
 
   .img-content {
@@ -36,7 +37,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     object-fit: cover;
     z-index: 0;
   }
