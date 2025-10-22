@@ -20,7 +20,7 @@
     }
     const el = document.querySelector(href);
     if (el) {
-      const navHeight = 64; // adjust to your nav height in px
+      const navHeight = 0; // adjust to your nav height in px
       const rect = el.getBoundingClientRect();
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
@@ -41,21 +41,21 @@
   <div class="nav-links">
     <div class="navlink-item">
       <div class="no">I</div>
-      <a href="#story" on:click={smoothAnchor}>Story</a>
-    </div>
-    <div class="navlink-item">
-      <div class="no">II</div>
       <a href="#date" on:click={smoothAnchor}>Date</a>
     </div>
     <div class="navlink-item">
-      <div class="no">III</div>
+      <div class="no">II</div>
       <a href="#location" on:click={smoothAnchor}>Location</a>
     </div>
-
+    <div class="navlink-item">
+      <div class="no">III</div>
+      <a href="#story" on:click={smoothAnchor}>Story</a>
+    </div>
     <div class="navlink-item">
       <div class="no">IV</div>
       <a href="#faq" on:click={smoothAnchor}>FAQ</a>
     </div>
+
     <div class="navlink-item">
       <div class="no">V</div>
       <a href="#rsvp" on:click={smoothAnchor}>RSVP</a>

@@ -1,8 +1,9 @@
 <script>
   export let width = "200px"; // default width
+  import { fadeOnView } from "$lib/actions/fadeOnView";
 </script>
 
-<div class="head" style={`width: ${width}`}>
+<div use:fadeOnView class="head" style={`width: ${width}`}>
   <svg
     width="121"
     height="93"

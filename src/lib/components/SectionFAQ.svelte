@@ -1,8 +1,11 @@
 <script>
   import { slide } from "svelte/transition";
+  import { onMount } from "svelte";
   import Wrapper from "./Wrapper.svelte";
   import Checkers from "./Checkers.svelte";
-  import { fadeOnView } from "$lib/actions/fadeOnView.js";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { fadeOnView } from "$lib/actions/fadeOnView";
 
   let faqs = [
     {
@@ -70,12 +73,27 @@
       if (faqLine) faqLine.style.width = "100%";
     }
   }
+
+  onMount(() => {
+    gsap.from(".faq-item", {
+      scrollTrigger: {
+        trigger: ".faq-list",
+        start: "top bottom",
+        end: "bottom center",
+        scrub: true,
+      },
+      opacity: 0,
+      y: 32,
+      stagger: 0.3,
+      ease: "none",
+    });
+  });
 </script>
 
 <Wrapper paddingY="x-large" />
 <section id="faq" class="faq">
-  <span class="script">Frequently</span>
-  <h2 use:fadeOnView={{ split: "lines", stagger: 0.05 }}>Asked Questions</h2>
+  <span use:fadeOnView class="script">Frequently</span>
+  <h2 use:fadeOnView>Asked Questions</h2>
 
   <div class="faq-list">
     {#each faqs as faq, i}

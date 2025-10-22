@@ -101,6 +101,7 @@
   @media (max-width: 768px) {
     .btn {
       padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
     }
   }
 </style>

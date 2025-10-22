@@ -1,12 +1,52 @@
+<script>
+  import { onMount } from "svelte";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitText from "gsap/SplitText";
+  import Separator from "./Separator.svelte";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    gsap.to(".img-full", {
+      y: "-10%",
+      scaleY: 1.1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".img-full",
+        start: "top bottom", // when the top of .img-full hits bottom of viewport
+        end: "bottom top", // when the bottom of .img-full hits top of viewport
+        scrub: true,
+      },
+    });
+
+    const split = new SplitText("#image h2", { type: "chars", mask: "chars" });
+
+    gsap.from(split.chars, {
+      yPercent: 101,
+      ease: "power2.out",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: "#image",
+        start: "top 80%",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+</script>
+
 <section id="image">
+  <Separator />
   <div class="img-content">
     <h2>The</h2>
     <h2>Journey</h2>
-    <div class="img-container"></div>
-
+    <div class="img-container">
+      <img src="/images/section-img.webp" alt="" class="img-parallax" />
+    </div>
     <h2>Continues</h2>
   </div>
-  <img src="/images/section-img.webp" alt="" class="img-full" />
+  <img src="/images/img-full-section.webp" alt="" class="img-full" />
 </section>
 
 <style scoped>
@@ -41,9 +81,17 @@
     object-fit: cover;
     z-index: 0;
   }
+
   .img-container {
     width: 15rem;
     aspect-ratio: 1 / 1;
     border: 0.5rem solid white;
+    overflow: hidden;
+  }
+
+  .img-parallax {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
   }
 </style>

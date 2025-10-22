@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import Button from "./Button.svelte";
   import { gsap } from "gsap";
+  import HeadSVG from "./HeadSVG.svelte";
 
   let coverEl;
   let buttonEl;
@@ -11,6 +12,39 @@
   onMount(() => {
     // Prevent scrolling while cover is active
     document.body.style.overflow = "hidden";
+
+    const tl = gsap.timeline();
+    tl.from(".script", {
+      y: 20,
+      opacity: 0,
+      ease: "expo.out",
+    })
+      .from(
+        ".title",
+        {
+          y: 20,
+          opacity: 0,
+          ease: "expo.out",
+        },
+        "-=0.5"
+      )
+      .from(".date", {
+        y: 0,
+        opacity: 0,
+        duration: 1,
+        ease: "expo.out",
+      })
+      .from(".divider", {
+        scaleX: 0,
+        duration: 1,
+        ease: "expo.out",
+      })
+      .from(".to", {
+        y: 0,
+        opacity: 0,
+        duration: 1,
+        ease: "expo.out",
+      });
 
     // Read ?guest=<Name> from URL
     try {
@@ -40,15 +74,23 @@
 </script>
 
 <div class="cover" bind:this={coverEl} aria-label="Invitation cover">
-  <span class="script">The wedding of</span>
-  <h1 class="title">Wahyu &amp; Novi</h1>
-  <p class="date">10 November 2025</p>
+  <HeadSVG width="8rem" />
+  <div
+    style="display: flex; flex-direction: column; align-items: center; gap: .5rem; margin-top: 3rem;"
+  >
+    <span class="script">The wedding of</span>
+    <h1 class="title">Wahyu &amp; Novi</h1>
+    <p class="date">10 November 2025</p>
+  </div>
   <div class="divider">
     <hr />
-    <div class="img-container"></div>
+    <div class="img-container">
+      <img src="/images/cover-img.webp" alt="" class="img-parallax" />
+    </div>
     <hr />
   </div>
-  <p class="to">to: {guestName}</p>
+
+  <p class="to"><sup>to</sup> {guestName}</p>
   <div class="button-wrapper">
     <svg
       width="16"
@@ -91,7 +133,7 @@
   </div>
 </div>
 
-<style>
+<style scoped>
   .cover {
     position: fixed;
     inset: 0;
@@ -167,10 +209,18 @@
     margin: 3rem 0;
     aspect-ratio: 1 / 1;
     border: 0.5rem solid white;
+    overflow: hidden;
   }
 
   .date {
     margin: 0;
     font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .img-parallax {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 </style>

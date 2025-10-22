@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { fadeOnView } from "$lib/actions/fadeOnView.js";
   import Button from "./Button.svelte";
   import HeadSVG from "./HeadSVG.svelte";
   // Target wedding date
@@ -38,9 +37,7 @@
   <HeadSVG width="7.5rem" />
   <div style="text-align: center;">
     <span class="script">Wedding Date</span>
-    <h2 id="big" use:fadeOnView={{ split: "chars", stagger: 0.05 }}>
-      Nov 10, 2025
-    </h2>
+    <h2 id="big">Nov 10, 2025</h2>
   </div>
 
   <p class="countdown">
@@ -67,6 +64,7 @@
     font-size: 6rem;
   }
   .section-date {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

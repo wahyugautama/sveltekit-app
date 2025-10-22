@@ -250,8 +250,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
-    max-width: 30rem;
+    gap: 1.5rem;
     margin: 5rem 0;
   }
 

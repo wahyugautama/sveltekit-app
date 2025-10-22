@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from "./Button.svelte";
+  import { fadeOnView } from "$lib/actions/fadeOnView";
   import HeadSVG from "./HeadSVG.svelte";
 </script>
 
@@ -9,18 +10,19 @@
     <h2>Location</h2>
   </div>
   <HeadSVG width="7.5rem" />
-  <div class="divider-wrapper">
+
+  <div use:fadeOnView class="divider-wrapper">
     <hr />
     <span>-8.5903118, 115.185418</span>
     <hr />
   </div>
 
-  <p class="description">
+  <p use:fadeOnView class="description">
     Come by car or motorbike. <br />Parking is available at the venue and along
     the street.
   </p>
-  <h3 class="address">BR. DELOD PEMPATAN<br />LUKLUK, MENGWI</h3>
-  <p>badung, bali</p>
+  <h3 use:fadeOnView class="address">BR. DELOD PEMPATAN<br />LUKLUK, MENGWI</h3>
+  <p use:fadeOnView>badung, bali</p>
   <Button
     buttonText="Get Direction"
     link="https://maps.app.goo.gl/JcLeM3jsCgbEnjsW7"

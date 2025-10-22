@@ -14,10 +14,9 @@
 </script>
 
 <SectionHero />
-<Ornament />
-<SectionStory />
 <SectionDate />
 <SectionLocation />
 <SectionImage />
+<SectionStory />
 <SectionFAQ />
 <SectionRSVP />

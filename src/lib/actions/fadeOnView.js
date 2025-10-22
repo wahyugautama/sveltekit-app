@@ -1,26 +1,20 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// Only works with a Club GSAP license:
-import SplitText from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export function fadeOnView(node, options = {}) {
   const defaults = {
-    duration: 1,
-    y: 30,
+    duration: 2,
+    y: 80,
     opacity: 0,
-    ease: "power2.out",
+    ease: "power4.out",
     stagger: 0.03,
-    split: "chars", // 'chars' | 'words' | 'lines'
   };
+
   const config = { ...defaults, ...options };
 
-  // Split text using GSAP's SplitText
-  const split = new SplitText(node, { type: config.split });
-  const targets = split[config.split];
-
-  const tween = gsap.from(targets, {
+  const tween = gsap.from(node, {
     scrollTrigger: {
       trigger: node,
       start: "top 80%",
@@ -36,7 +30,6 @@ export function fadeOnView(node, options = {}) {
   return {
     destroy() {
       tween.kill();
-      split.revert(); // restores original text
     },
   };
 }
