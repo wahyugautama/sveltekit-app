@@ -4,6 +4,7 @@
   import Button from "./Button.svelte";
   import { gsap } from "gsap";
   import HeadSVG from "./HeadSVG.svelte";
+  import SplitText from "gsap/SplitText";
 
   let coverEl;
   let buttonEl;
@@ -65,6 +66,30 @@
           // Re-enable scrolling when cover is hidden
           document.body.style.overflow = "";
         },
+      });
+      gsap.from(".profile", {
+        y: "50%",
+        opacity: 0,
+        duration: 2,
+        ease: "circ.out",
+        onComplete: () => {
+          // Hide the element after animation
+          coverEl.style.display = "none";
+          // Re-enable scrolling when cover is hidden
+          document.body.style.overflow = "";
+        },
+      });
+
+      const split = new SplitText("#hero h1", {
+        type: "chars",
+        mask: "chars",
+      });
+
+      gsap.from(split.chars, {
+        yPercent: 101,
+        ease: "power2.out",
+        stagger: 0.05,
+        delay: 1,
       });
     };
 

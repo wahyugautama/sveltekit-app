@@ -34,9 +34,10 @@
 </script>
 
 <section id="date" class="section-date">
-  <HeadSVG width="7.5rem" />
+  <HeadSVG width="8rem" />
+
   <div style="text-align: center;">
-    <span class="script">Wedding Date</span>
+    <span class="script">Wedding date</span>
     <h2 id="big">Nov 10, 2025</h2>
   </div>
 
@@ -49,13 +50,13 @@
       <h4>Ceremony</h4>
     </div>
     <div class="schedule">
-      <p class="time">13:00 wita - done</p>
+      <p class="time">13:00 wita - finish</p>
       <h4>Reception</h4>
     </div>
   </div>
   <Button
     buttonText="save the date"
-    link="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=Lukluk,+Badung,+Bali"
+    link="https://calendar.google.com/calendar/u/0/r/eventedit?text=Wedding+of+Wahyu+%26+Novi&dates=20251110/20251111&details=Join+us+on+our+special+day!&location=JOJO%27S+HOME%2C+Gg.+Panti+No.12%2C+Lukluk%2C+Kec.+Mengwi%2C+Kabupaten+Badung%2C+Bali+80351%2C+Indonesia"
   />
 </section>
 

@@ -43,7 +43,7 @@
   <div class="footer left">
     <HeadSVG width="8rem" />
     <div class="img-container">
-      <img src="/images/footer-bg.webp" alt="" class="img-parallax" />
+      <img src="/images/footer-02.webp" alt="" class="img-parallax" />
     </div>
     <div>
       <svg
@@ -89,7 +89,7 @@
 
       <!-- Attendance -->
       <fieldset class="pill-group">
-        <legend>Will you be attending?</legend>
+        <legend>Will we see you there?</legend>
 
         <label class="pill">
           <input
@@ -187,9 +187,7 @@
     </form>
 
     {#if status === "success"}
-      <p class="success">
-        Thanks for your RSVP! We look forward to seeing you.
-      </p>
+      <p class="success">Thanks for confirming your attendance!</p>
     {:else if status === "error"}
       <p class="error">❌ Oops, something went wrong.</p>
     {/if}
@@ -241,7 +239,7 @@
   }
 
   .footer.left {
-    background-image: url("/images/footer-bg.webp");
+    background-image: url("/images/footer-01.webp");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

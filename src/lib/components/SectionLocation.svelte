@@ -2,6 +2,23 @@
   import Button from "./Button.svelte";
   import { fadeOnView } from "$lib/actions/fadeOnView";
   import HeadSVG from "./HeadSVG.svelte";
+  import { onMount } from "svelte";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  onMount(() => {
+    gsap.from("#location", {
+      scrollTrigger: {
+        trigger: "#location",
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+      },
+      scale: 0.9,
+      y: 80,
+      ease: "none",
+    });
+  });
 </script>
 
 <section id="location">
@@ -13,6 +30,7 @@
 
   <div use:fadeOnView class="divider-wrapper">
     <hr />
+
     <span>-8.5903118, 115.185418</span>
     <hr />
   </div>
@@ -25,7 +43,7 @@
   <p use:fadeOnView>badung, bali</p>
   <Button
     buttonText="Get Direction"
-    link="https://maps.app.goo.gl/JcLeM3jsCgbEnjsW7"
+    link="https://maps.app.goo.gl/cixjFuLoXpTnte1y7"
     variant="invert"
   />
 </section>
@@ -37,7 +55,7 @@
   }
   #location {
     min-height: 100vh;
-    background-color: #0f5ad0;
+    background-color: var(--blue-primary);
     color: white;
     display: flex;
     flex-direction: column;

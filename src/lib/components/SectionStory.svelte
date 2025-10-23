@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitText from "gsap/SplitText";
   import Checkers from "./Checkers.svelte";
 
   gsap.registerPlugin(ScrollTrigger);
@@ -10,13 +11,12 @@
     const cards = gsap.utils.toArray<HTMLElement>(".story-card");
 
     cards.forEach((card) => {
-      const endRotate = gsap.utils.random([-15, -10, -5], true);
       gsap.fromTo(
         card,
-        { rotate: 20, x: 900 },
+        { rotate: 15, x: "60vw" },
         {
-          rotate: endRotate,
-          x: -1000,
+          rotate: -15,
+          x: "-110vw",
           ease: "power2.in",
           duration: 1,
           scrollTrigger: {
@@ -29,14 +29,16 @@
       );
     });
 
-    gsap.from("h1", {
-      opacity: 0,
-      ease: "power2.in",
-      duration: 0.5,
+    const split = new SplitText("#story h1", { type: "chars", mask: "chars" });
+
+    gsap.from(split.chars, {
+      yPercent: 101,
+      ease: "power2.out",
+      stagger: 0.05,
       scrollTrigger: {
         trigger: ".sticky-story",
-        start: "top bottom", // animation starts when card enters viewport
-        end: "bottom 50%", // scrub region
+        start: "top 80%",
+        end: "bottom center",
         scrub: true,
       },
     });
@@ -55,7 +57,8 @@
 
   <div class="story-wrapper">
     <div class="story-card">
-      <img src="/images/section-img.webp" alt="" class="img-parallax" />
+      <div class="story-line"></div>
+      <img src="/images/story-01.webp" alt="" class="img-parallax" />
       <p>
         We met the swipe-right way, but the real spark happened at a small
         coffee shop in Seminyak called The Library. Coffee in hand, laughs
@@ -65,7 +68,8 @@
       </p>
     </div>
     <div class="story-card">
-      <img src="/images/section-img.webp" alt="" class="img-parallax" />
+      <div class="story-line"></div>
+      <img src="/images/story-02.webp" alt="" class="img-parallax" />
       <p>
         We’ve shared everything from working on projects side by side to hunting
         down the best street food, great restaurants & AYCEs, booking spa days,
@@ -74,7 +78,8 @@
       </p>
     </div>
     <div class="story-card">
-      <img src="/images/section-img.webp" alt="" class="img-parallax" />
+      <div class="story-line"></div>
+      <img src="/images/story-03.webp" alt="" class="img-parallax" />
       <p>
         Over time, talking about the future felt less like a “what if” and more
         like the obvious next step. With Wahyu's career shift, feeling ready
@@ -88,6 +93,8 @@
 <style scoped>
   #story {
     min-height: 100vh;
+    background-color: var(--blue-primary);
+    color: white;
   }
 
   .sticky-story {
@@ -107,6 +114,7 @@
     overflow-x: hidden;
     gap: 8rem;
     padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .story-card {
@@ -114,9 +122,20 @@
     position: relative;
     top: auto;
     background-color: white;
+    color: var(--blue-primary);
     padding: 1rem;
     transform-origin: center;
     transform-style: preserve-3d;
+  }
+
+  .story-line {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 25rem;
+    width: 1px;
+    background-color: var(--blue-primary);
   }
 
   p {

@@ -3,6 +3,7 @@
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import SplitText from "gsap/SplitText";
+  import { linesReveal } from "$lib/actions/lineReveal";
   import Separator from "./Separator.svelte";
 
   gsap.registerPlugin(ScrollTrigger);
@@ -16,6 +17,17 @@
         trigger: ".img-full",
         start: "top bottom", // when the top of .img-full hits bottom of viewport
         end: "bottom top", // when the bottom of .img-full hits top of viewport
+        scrub: true,
+      },
+    });
+
+    gsap.to(".img-container1", {
+      rotateY: 360,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".img-full",
+        start: "top bottom", // when the top of .img-full hits bottom of viewport
+        end: "bottom center", // when the bottom of .img-full hits top of viewport
         scrub: true,
       },
     });
@@ -41,12 +53,12 @@
   <div class="img-content">
     <h2>The</h2>
     <h2>Journey</h2>
-    <div class="img-container">
-      <img src="/images/section-img.webp" alt="" class="img-parallax" />
+    <div class="img-container1">
+      <img src="/images/dance-bg.webp" alt="" class="img-parallax" />
     </div>
     <h2>Continues</h2>
   </div>
-  <img src="/images/img-full-section.webp" alt="" class="img-full" />
+  <img src="/images/dance-bg.webp" alt="" class="img-full" />
 </section>
 
 <style scoped>
@@ -82,7 +94,7 @@
     z-index: 0;
   }
 
-  .img-container {
+  .img-container1 {
     width: 15rem;
     aspect-ratio: 1 / 1;
     border: 0.5rem solid white;

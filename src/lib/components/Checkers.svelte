@@ -10,14 +10,14 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M145 0V16H0V0H145ZM1 15H144V1H1V15Z" fill="#0055DD" />
+    <path d="M145 0V16H0V0H145ZM1 15H144V1H1V15Z" fill="currentColor" />
     <rect
       x="0.5"
       y="16"
       width="8"
       height="8"
       transform="rotate(-90 0.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="16.5"
@@ -25,7 +25,7 @@
       width="8"
       height="8"
       transform="rotate(-90 16.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="32.5"
@@ -33,7 +33,7 @@
       width="8"
       height="8"
       transform="rotate(-90 32.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="8.5"
@@ -41,7 +41,7 @@
       width="8"
       height="8"
       transform="rotate(-90 8.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="24.5"
@@ -49,7 +49,7 @@
       width="8"
       height="8"
       transform="rotate(-90 24.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="40.5"
@@ -57,7 +57,7 @@
       width="8"
       height="8"
       transform="rotate(-90 40.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="48.5"
@@ -65,7 +65,7 @@
       width="8"
       height="8"
       transform="rotate(-90 48.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="64.5"
@@ -73,7 +73,7 @@
       width="8"
       height="8"
       transform="rotate(-90 64.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="80.5"
@@ -81,7 +81,7 @@
       width="8"
       height="8"
       transform="rotate(-90 80.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="56.5"
@@ -89,7 +89,7 @@
       width="8"
       height="8"
       transform="rotate(-90 56.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="72.5"
@@ -97,7 +97,7 @@
       width="8"
       height="8"
       transform="rotate(-90 72.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="88.5"
@@ -105,7 +105,7 @@
       width="8"
       height="8"
       transform="rotate(-90 88.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="96.5"
@@ -113,7 +113,7 @@
       width="8"
       height="8"
       transform="rotate(-90 96.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="112.5"
@@ -121,7 +121,7 @@
       width="8"
       height="8"
       transform="rotate(-90 112.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="128.5"
@@ -129,7 +129,7 @@
       width="8"
       height="8"
       transform="rotate(-90 128.5 16)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="104.5"
@@ -137,7 +137,7 @@
       width="8"
       height="8"
       transform="rotate(-90 104.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="120.5"
@@ -145,7 +145,7 @@
       width="8"
       height="8"
       transform="rotate(-90 120.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
     <rect
       x="136.5"
@@ -153,7 +153,7 @@
       width="8"
       height="8"
       transform="rotate(-90 136.5 8)"
-      fill="#0055DD"
+      fill="currentColor"
     />
   </svg>
 </div>

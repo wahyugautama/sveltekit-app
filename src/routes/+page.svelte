@@ -6,7 +6,6 @@
   import SectionRSVP from "$lib/components/SectionRSVP.svelte";
   import SectionDate from "$lib/components/SectionDate.svelte";
   import SectionStory from "$lib/components/SectionStory.svelte";
-  import Ornament from "$lib/components/Ornament.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import Cover from "$lib/components/Cover.svelte";
   import SectionLocation from "$lib/components/SectionLocation.svelte";

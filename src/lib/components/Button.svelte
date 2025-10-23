@@ -74,28 +74,28 @@
   .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    border: 1px solid #0f5ad0;
-    color: #0f5ad0;
+    border: 1px solid var(--blue-primary);
+    color: var(--blue-primary);
     text-transform: uppercase;
     text-decoration: none;
     transition: all 0.2s ease;
   }
 
   .btn:hover {
-    background-color: #0f5ad0;
+    background-color: var(--blue-primary);
     color: white;
   }
 
   /* Inverted variant */
   .btn.invert {
-    background-color: #0f5ad0;
+    background-color: var(--blue-primary);
     color: white;
     border-color: white;
   }
 
   .btn.invert:hover {
     background-color: white;
-    color: #0f5ad0;
+    color: var(--blue-primary);
   }
 
   @media (max-width: 768px) {

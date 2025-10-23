@@ -6,13 +6,14 @@
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { fadeOnView } from "$lib/actions/fadeOnView";
+  import Separator from "./Separator.svelte";
 
   let faqs = [
     {
       no: "001",
       question: "Where is the wedding taking place?",
       answer:
-        "Both the ceremony and reception are at Gg. Panti no. 12, Lukluk, Mengwi, Badung, Bali",
+        "Both the ceremony and reception will be held at Gg. Panti no. 12, Lukluk, Badung, Bali, so no need to move around.",
     },
     {
       no: "002",
@@ -24,24 +25,24 @@
       no: "003",
       question: "What time should I come?",
       answer:
-        "The Balinese ceremony runs 6:00 AM – 12:00 PM (join anytime …). The reception begins at 1:00 PM and goes until finish.",
+        "The Balinese ceremony runs 6:00 AM – 12:00 PM. You’re welcome to join at any point to witness the tradition, or simply come for the reception starting at 1:00 PM till finish.",
     },
     {
       no: "004",
       question: "What’s the dress code?",
       answer:
-        "Anything casual works! A simple kebaya or traditional attire is also great. Since it’s daytime, light and comfy outfits are best.",
+        "Anything casual works! A simple kebaya or traditional attire is also nice. Since it’s daytime, light and comfy outfits are best.",
     },
     {
       no: "005",
       question: "What food will be served?",
-      answer:
-        "A buffet of halal Indonesian dishes. Come hungry and enjoy as much as you like.",
+      answer: "A buffet of halal Indonesian dishes.",
     },
     {
       no: "006",
       question: "Can I bring someone with me?",
-      answer: "Plus-ones are welcome if confirmed in your RSVP…",
+      answer:
+        "Plus-ones are welcome if confirmed on your RSVP. We kindly ask that only those listed on the invitation attend, so we can prepare the right amount of food and drinks for everyone.",
     },
   ];
 
@@ -90,8 +91,8 @@
   });
 </script>
 
-<Wrapper paddingY="x-large" />
 <section id="faq" class="faq">
+  <Separator />
   <span use:fadeOnView class="script">Frequently</span>
   <h2 use:fadeOnView>Asked Questions</h2>
 
@@ -160,7 +161,6 @@
   </div>
   <Checkers width="8rem" />
 </section>
-<Wrapper />
 
 <style>
   #faq {
@@ -169,6 +169,7 @@
     align-items: center;
     min-height: 100vh;
     justify-content: center;
+    position: relative;
   }
   .faq h2 {
     text-align: center;
@@ -186,7 +187,7 @@
 
   .faq-line {
     height: 1px;
-    background-color: #0f5ad0;
+    background-color: var(--blue-primary);
     position: absolute;
     top: 0;
     left: 0;
@@ -196,8 +197,8 @@
     display: grid;
     position: relative;
     grid-template-columns: 1fr 2fr 2fr 1fr;
-    border-top: 1px solid #a8c4f0;
-    color: #0f5ad0;
+    border-top: 1px solid var(--border);
+    color: var(--blue-primary);
   }
   .faq-no {
     padding-top: 0.5rem;
@@ -217,13 +218,13 @@
   .faq-question {
     font-size: 1rem;
     line-height: 1.2;
-    color: #0f5ad0;
+    color: var(--blue-primary);
     text-transform: uppercase;
     margin: 0;
   }
   .btn-toggle {
     margin-left: 1rem;
-    border: #0f5ad0 solid 1px;
+    border: var(--blue-primary) solid 1px;
     width: 1.5rem;
     height: 1.5rem;
     flex-shrink: 0;
@@ -231,7 +232,7 @@
 
   .toggle-inner {
     border-radius: 50%;
-    border: #0f5ad0 solid 1px;
+    border: var(--blue-primary) solid 1px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -244,7 +245,7 @@
   }
   .faq-answer {
     margin-top: 0.5rem;
-    color: #0f5ad0;
+    color: var(--blue-primary);
     font-size: 0.825rem;
   }
 
