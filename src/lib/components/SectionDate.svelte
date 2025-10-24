@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Button from "./Button.svelte";
-  import HeadSVG from "./HeadSVG.svelte";
+  import GateSVG from "./GateSVG.svelte";
+
   // Target wedding date
   const weddingDate = new Date("2025-11-10T00:00:00");
 
@@ -34,8 +35,7 @@
 </script>
 
 <section id="date" class="section-date">
-  <HeadSVG width="8rem" />
-
+  <GateSVG />
   <div style="text-align: center;">
     <span class="script">Wedding date</span>
     <h2 id="big">Nov 10, 2025</h2>
@@ -113,6 +113,9 @@
   @media (max-width: 768px) {
     #big {
       font-size: 3.5rem;
+    }
+    #date {
+      overflow: hidden;
     }
   }
 </style>

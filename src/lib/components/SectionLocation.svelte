@@ -4,21 +4,6 @@
   import HeadSVG from "./HeadSVG.svelte";
   import { onMount } from "svelte";
   import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  onMount(() => {
-    gsap.from("#location", {
-      scrollTrigger: {
-        trigger: "#location",
-        start: "top bottom",
-        end: "center center",
-        scrub: true,
-      },
-      scale: 0.9,
-      y: 80,
-      ease: "none",
-    });
-  });
 </script>
 
 <section id="location">
@@ -65,6 +50,7 @@
     padding: 2rem 1rem;
     gap: 1.5rem;
     position: relative;
+    z-index: 10;
   }
 
   .divider-wrapper {

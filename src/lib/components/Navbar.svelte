@@ -67,7 +67,7 @@
   nav {
     position: fixed;
     background-color: white;
-    bottom: 1rem;
+    top: 1rem;
     left: 1rem;
     right: 1rem;
     z-index: 1000;

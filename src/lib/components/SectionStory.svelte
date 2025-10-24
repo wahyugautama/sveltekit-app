@@ -48,7 +48,7 @@
 <section id="story">
   <div class="sticky-story">
     <div
-      style="position: absolute; top: 2rem; left: 50%; transform: translateX(-50%);"
+      style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);"
     >
       <Checkers width="8rem" />
     </div>

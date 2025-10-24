@@ -21,7 +21,6 @@ export function linesReveal(node) {
         start: "top bottom",
         end: "bottom center",
         scrub: true,
-        markers: true, // set to false if you don’t want markers globally
       },
     });
 

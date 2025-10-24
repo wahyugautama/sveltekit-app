@@ -45,7 +45,7 @@
         </p>
       </div>
     </div>
-
+    <HeadSVG width="8rem" />
     <div id="right" class="profile">
       <div class="img-container">
         <img src="/images/novi.webp" alt="" class="img-parallax" />
@@ -62,7 +62,7 @@
 
 <style scoped>
   #hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,7 +113,11 @@
 
   @media (max-width: 768px) {
     .grid {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    #hero {
+      padding-top: 6rem;
     }
   }
 </style>

@@ -11,7 +11,6 @@
   onMount(() => {
     gsap.to(".img-full", {
       y: "-10%",
-      scaleY: 1.1,
       ease: "none",
       scrollTrigger: {
         trigger: ".img-full",
