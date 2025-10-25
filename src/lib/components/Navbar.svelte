@@ -114,8 +114,15 @@
   }
 
   @media (max-width: 768px) {
-    nav {
+    .no {
       display: none;
+    }
+
+    .nav-links a {
+      font-size: 0.625rem;
+      padding: 0.25rem;
+      text-align: center;
+      border-left: none;
     }
   }
 </style>

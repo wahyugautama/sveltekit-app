@@ -5,28 +5,67 @@
   import SplitText from "gsap/SplitText";
   import Checkers from "./Checkers.svelte";
 
-  gsap.registerPlugin(ScrollTrigger);
-
   onMount(() => {
     const cards = gsap.utils.toArray<HTMLElement>(".story-card");
 
-    cards.forEach((card) => {
-      gsap.fromTo(
-        card,
-        { rotate: 15, x: "60vw" },
-        {
-          rotate: -15,
-          x: "-110vw",
-          ease: "power2.in",
-          duration: 1,
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom", // animation starts when card enters viewport
-            end: "bottom 50%", // scrub region
-            scrub: true,
-          },
-        }
-      );
+    gsap.registerPlugin(ScrollTrigger);
+
+    const mm = gsap.matchMedia();
+
+    // Desktop / tablet (≥ 768px): keep your original x + rotate animation
+    mm.add("(min-width: 768px)", () => {
+      const ctx = gsap.context(() => {
+        cards.forEach((card) => {
+          gsap.fromTo(
+            card,
+            { rotate: 15, x: "60vw" },
+            {
+              rotate: -15,
+              x: "-110vw",
+              ease: "power2.in",
+              duration: 1,
+              scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+              },
+              // optional: avoids initial jump if elements already have transforms
+              immediateRender: false,
+            }
+          );
+        });
+      });
+
+      // cleanup when query stops matching
+      return () => ctx.revert();
+    });
+
+    // Mobile (< 768px): rotate-only, no x animation
+    mm.add("(max-width: 767px)", () => {
+      const ctx = gsap.context(() => {
+        cards.forEach((card) => {
+          gsap.fromTo(
+            card,
+            { rotate: 0 }, // no x in the "from"
+            {
+              rotate: -5,
+              yPercent: -10, // no x in the "to"
+              ease: "power2.in",
+              duration: 1,
+              scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "bottom 50%",
+                scrub: true,
+              },
+              immediateRender: false,
+            }
+          );
+        });
+      });
+
+      return () => ctx.revert();
     });
 
     const split = new SplitText("#story h1", { type: "chars", mask: "chars" });
@@ -63,8 +102,8 @@
         We met the swipe-right way, but the real spark happened at a small
         coffee shop in Seminyak called The Library. Coffee in hand, laughs
         flowing, and the realization that we’re both the kind of people who
-        treat food as the main reason to travel. From there, things only got
-        better.
+        treat food & culture as the main reason to travel. From there, things
+        only got better.
       </p>
     </div>
     <div class="story-card">
@@ -72,19 +111,20 @@
       <img src="/images/story-02.webp" alt="" class="img-parallax" />
       <p>
         We’ve shared everything from working on projects side by side to hunting
-        down the best street food, great restaurants & AYCEs, booking spa days,
-        and arguing over thriller plot twists. Most importantly, we’ve always
-        been able to be ourselves around each other.
+        down the best street food, comparing coffee tasting notes, trying out
+        restaurants & AYCEs, booking spa days, and arguing over thriller plot
+        twists. But the best part is still how easy it is to just be ourselves
+        when we’re together.
       </p>
     </div>
     <div class="story-card">
       <div class="story-line"></div>
       <img src="/images/story-03.webp" alt="" class="img-parallax" />
       <p>
-        Over time, talking about the future felt less like a “what if” and more
-        like the obvious next step. With Wahyu's career shift, feeling ready
-        mentally and financially, and knowing we’re the most compatible versions
-        of ourselves, marriage just feels like the natural next step.
+        Eventually, all our talks about the future turned into a quiet
+        certainty. With Wahyu's career shift, our shared sense of readiness, and
+        knowing we’re most compatible for each other, marriage just feels like
+        the natural next step.
       </p>
     </div>
   </div>

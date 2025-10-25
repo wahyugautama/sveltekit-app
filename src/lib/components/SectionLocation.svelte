@@ -2,8 +2,6 @@
   import Button from "./Button.svelte";
   import { fadeOnView } from "$lib/actions/fadeOnView";
   import HeadSVG from "./HeadSVG.svelte";
-  import { onMount } from "svelte";
-  import { gsap } from "gsap";
 </script>
 
 <section id="location">
@@ -83,5 +81,20 @@
     left: 2rem;
     top: 4rem;
     text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .description {
+      text-align: center;
+      left: 50%;
+      width: 35ch;
+      transform: translateX(-50%);
+    }
+
+    .heading {
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 </style>

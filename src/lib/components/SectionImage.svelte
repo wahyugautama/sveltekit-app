@@ -9,17 +9,6 @@
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
-    gsap.to(".img-full", {
-      y: "-10%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".img-full",
-        start: "top bottom", // when the top of .img-full hits bottom of viewport
-        end: "bottom top", // when the bottom of .img-full hits top of viewport
-        scrub: true,
-      },
-    });
-
     gsap.to(".img-container1", {
       rotateY: 360,
       ease: "none",
@@ -57,7 +46,7 @@
     </div>
     <h2>Continues</h2>
   </div>
-  <img src="/images/dance-bg.webp" alt="" class="img-full" />
+  <img src="/images/dance-bg-01.webp" alt="" class="img-full" />
 </section>
 
 <style scoped>
@@ -88,7 +77,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
   }
@@ -102,7 +91,7 @@
 
   .img-parallax {
     width: 100%;
-    height: 120%;
+    height: 100%;
     object-fit: cover;
   }
 </style>

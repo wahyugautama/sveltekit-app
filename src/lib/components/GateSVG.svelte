@@ -204,6 +204,7 @@
 
 <style>
   .gate {
+    pointer-events: none;
     width: 70vw;
     display: flex;
     align-items: center;

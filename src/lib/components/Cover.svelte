@@ -16,16 +16,17 @@
 
     const tl = gsap.timeline();
     tl.from(".script", {
-      y: 20,
+      y: 40,
       opacity: 0,
-      ease: "expo.out",
+      ease: "circ.out",
     })
       .from(
         ".title",
         {
-          y: 20,
+          y: 40,
           opacity: 0,
-          ease: "expo.out",
+          duration: 1,
+          ease: "circ.out",
         },
         "-=0.5"
       )
@@ -33,19 +34,37 @@
         y: 0,
         opacity: 0,
         duration: 1,
-        ease: "expo.out",
+        ease: "circ.out",
       })
-      .from(".divider", {
-        scaleX: 0,
-        duration: 1,
-        ease: "expo.out",
-      })
-      .from(".to", {
-        y: 0,
-        opacity: 0,
-        duration: 1,
-        ease: "expo.out",
-      });
+      .from(
+        ".divider",
+        {
+          rotateY: 90,
+          duration: 2,
+          ease: "circ.out",
+        },
+        "-=0.5"
+      )
+      .from(
+        ".to",
+        {
+          y: 0,
+          opacity: 0,
+          duration: 2,
+          ease: "circ.out",
+        },
+        "<"
+      )
+      .from(
+        ".button-wrapper",
+        {
+          y: 40,
+          opacity: 0,
+          duration: 2,
+          ease: "circ.out",
+        },
+        "-=0.75"
+      );
 
     // Read ?guest=<Name> from URL
     try {
@@ -108,11 +127,9 @@
     <p class="date">10 November 2025</p>
   </div>
   <div class="divider">
-    <hr />
     <div class="img-container">
       <img src="/images/cover-img.webp" alt="" class="img-parallax" />
     </div>
-    <hr />
   </div>
 
   <p class="to"><sup>to</sup> {guestName}</p>
@@ -171,7 +188,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem;
+
     z-index: 9999;
     /* for GSAP starting positions */
     transform: translateY(0);
@@ -210,14 +227,7 @@
     display: flex;
     width: 100%;
     align-items: center;
-  }
-
-  hr {
-    flex-grow: 1;
-    border: none;
-    height: 1px;
-    width: 100%;
-    background-color: white;
+    justify-content: center;
   }
 
   .to {

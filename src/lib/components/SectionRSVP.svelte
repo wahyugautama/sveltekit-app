@@ -245,6 +245,7 @@
     background-repeat: no-repeat;
   }
   .rsvp-form {
+    width: min(32rem, 90%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,14 +254,18 @@
   }
 
   .field {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     gap: 0.5rem;
     text-align: center;
     justify-content: center;
     align-items: center;
+    justify-items: stretch;
   }
 
   input[type="text"] {
+    width: 100%;
     padding: 0 1rem;
     font-size: 1rem;
     color: white;

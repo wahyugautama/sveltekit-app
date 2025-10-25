@@ -93,7 +93,7 @@
 
 <section id="faq" class="faq">
   <Separator />
-  <span use:fadeOnView class="script">Frequently</span>
+  <span class="script">Frequently</span>
   <h2 use:fadeOnView>Asked Questions</h2>
 
   <div class="faq-list">
@@ -170,6 +170,7 @@
     min-height: 100vh;
     justify-content: center;
     position: relative;
+    padding: 6rem 0;
   }
   .faq h2 {
     text-align: center;
