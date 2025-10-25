@@ -193,5 +193,9 @@
     .story-card {
       width: 20rem;
     }
+
+    .story-wrapper {
+      overflow: visible;
+    }
   }
 </style>
