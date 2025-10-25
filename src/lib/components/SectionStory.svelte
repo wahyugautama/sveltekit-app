@@ -96,7 +96,6 @@
 
   <div class="story-wrapper">
     <div class="story-card">
-      <div class="story-line"></div>
       <img src="/images/story-01.webp" alt="" class="img-parallax" />
       <p>
         We met the swipe-right way, but the real spark happened at a small
@@ -107,7 +106,6 @@
       </p>
     </div>
     <div class="story-card">
-      <div class="story-line"></div>
       <img src="/images/story-02.webp" alt="" class="img-parallax" />
       <p>
         We’ve shared everything from working on projects side by side to hunting
@@ -118,7 +116,6 @@
       </p>
     </div>
     <div class="story-card">
-      <div class="story-line"></div>
       <img src="/images/story-03.webp" alt="" class="img-parallax" />
       <p>
         Eventually, all our talks about the future turned into a quiet
@@ -168,16 +165,6 @@
     transform-style: preserve-3d;
   }
 
-  .story-line {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 25rem;
-    width: 1px;
-    background-color: var(--blue-primary);
-  }
-
   p {
     margin-bottom: 1rem;
   }
@@ -195,7 +182,7 @@
     }
 
     .story-wrapper {
-      overflow: visible;
+      overflow-x: visible;
     }
   }
 </style>
