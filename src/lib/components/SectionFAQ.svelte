@@ -19,7 +19,7 @@
       no: "002",
       question: "How do I get there? Is parking available?",
       answer:
-        "Come by car or motorbike. Parking is available at the venue and along the street.",
+        "Come by car or motorbike. Parking is available at the venue and along the roadside nearby.",
     },
     {
       no: "003",

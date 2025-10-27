@@ -20,7 +20,7 @@
 
   <p class="description">
     Come by car or motorbike. <br />Parking is available at the venue and along
-    the street.
+    the roadside nearby.
   </p>
   <h3 use:fadeOnView class="address">BR. DELOD PEMPATAN<br />LUKLUK, MENGWI</h3>
   <p use:fadeOnView>badung, bali</p>
