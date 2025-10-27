@@ -236,7 +236,7 @@
   }
 
   .footer.right {
-    background-color: #0f5ad0;
+    background-color: var(--blue-primary);
   }
 
   .footer.left {
@@ -393,7 +393,7 @@
 
   .btn:hover {
     background-color: white;
-    color: #0f5ad0;
+    color: var(--blue-primary);
   }
 
   @media (max-width: 768px) {
