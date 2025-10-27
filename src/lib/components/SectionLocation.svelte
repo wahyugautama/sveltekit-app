@@ -18,7 +18,7 @@
     <hr />
   </div>
 
-  <p use:fadeOnView class="description">
+  <p class="description">
     Come by car or motorbike. <br />Parking is available at the venue and along
     the street.
   </p>

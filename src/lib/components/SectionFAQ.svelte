@@ -254,5 +254,9 @@
     .faq-list {
       width: 90%;
     }
+
+    .faq-answer {
+      max-width: 85%;
+    }
   }
 </style>

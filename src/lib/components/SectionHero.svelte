@@ -45,11 +45,10 @@
         </p>
       </div>
     </div>
-    <div class="dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
+    <div>
+      <HeadSVG width="8rem" />
     </div>
+
     <div id="right" class="profile">
       <div class="img-container">
         <img src="/images/novi.webp" alt="" class="img-parallax" />
@@ -76,18 +75,6 @@
     gap: 2rem;
   }
 
-  .dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .dot {
-    width: 0.25rem;
-    height: 0.25rem;
-    background-color: var(--blue-primary);
-    border-radius: 50%;
-  }
   .profile {
     display: flex;
     flex-direction: column;

@@ -184,13 +184,14 @@
           <path d="M16 0V48H0V0H16ZM1 47H15V1H1V47Z" fill="currentColor" />
         </svg>
       </div>
+
+      {#if status === "success"}
+        <p class="success">Thanks for confirming your attendance!</p>
+      {:else if status === "error"}
+        <p class="error">Oops, something went wrong.</p>
+      {/if}
     </form>
 
-    {#if status === "success"}
-      <p class="success">Thanks for confirming your attendance!</p>
-    {:else if status === "error"}
-      <p class="error">❌ Oops, something went wrong.</p>
-    {/if}
     <span style="font-size: .75rem;"
       >(C) 2025
       <br />WEBSITE BY
@@ -271,7 +272,7 @@
     color: white;
     text-align: center;
     background-color: transparent;
-    border: #0f5ad0 1px solid;
+    border: var(--blue-primary) 1px solid;
     font-family: "Della Respira";
     text-transform: uppercase;
     transition:
@@ -280,8 +281,23 @@
   }
 
   input[type="text"]:focus {
-    border-color: white;
+    border-bottom: 1px solid white;
     outline: none;
+  }
+
+  /* Autofill fix for Chrome, Edge, Safari */
+  input[type="text"]:-webkit-autofill {
+    color: white;
+    -webkit-box-shadow: 0 0 0px 1000px var(--blue-primary) inset; /* match your background */
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s; /* prevent flashing */
+  }
+
+  /* For Firefox (optional) */
+  input[type="text"]:-moz-autofill {
+    color: white;
+    box-shadow: 0 0 0px 1000px #e9effc inset;
+    -moz-text-fill-color: white !important;
   }
 
   input[type="text"]::placeholder {

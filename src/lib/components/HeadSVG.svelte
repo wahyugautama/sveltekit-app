@@ -134,7 +134,7 @@
     justify-content: center;
 
     /* Maintain aspect ratio (100 / 34 = ~2.94) */
-    aspect-ratio: 100 / 34;
+    aspect-ratio: 121 / 93;
     flex-shrink: 0;
   }
 

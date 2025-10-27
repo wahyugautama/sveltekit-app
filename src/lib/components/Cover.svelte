@@ -249,7 +249,7 @@
 
   .date {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
   }
 
