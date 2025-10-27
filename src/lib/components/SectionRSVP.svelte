@@ -221,7 +221,7 @@
 
   .img-parallax {
     width: 100%;
-    height: 120%;
+    height: 100%;
     object-fit: cover;
   }
 
