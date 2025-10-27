@@ -68,7 +68,7 @@
   }
 
   .description {
-    max-width: 55ch;
+    max-width: 100%;
     position: absolute;
     right: 2rem;
     text-align: right;
