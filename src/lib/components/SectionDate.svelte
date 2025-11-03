@@ -49,7 +49,7 @@
       <h4>Ceremony</h4>
     </div>
     <div class="schedule">
-      <p class="time">13:00 wita - finish</p>
+      <p class="time">14:00 wita - finish</p>
       <h4>Reception</h4>
     </div>
   </div>
