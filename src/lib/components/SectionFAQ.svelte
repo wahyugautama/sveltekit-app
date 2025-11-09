@@ -25,7 +25,7 @@
       no: "003",
       question: "What time should I come?",
       answer:
-        "The Balinese ceremony runs 6:00 AM – 12:00 PM. You’re welcome to join at any point to witness the tradition, or simply come for the reception starting at 2:00 PM till finish.",
+        "The ceremony runs 9:00 AM – 12:00 PM. You’re welcome to join at any point to witness the tradition, or simply come for the reception starting at 2:00 PM till finish.",
     },
     {
       no: "004",

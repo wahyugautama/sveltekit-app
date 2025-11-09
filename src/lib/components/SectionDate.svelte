@@ -45,7 +45,7 @@
   </p>
   <div class="wrapper">
     <div class="schedule">
-      <p class="time">06:00 WITA</p>
+      <p class="time">09:00 WITA</p>
       <h4>Ceremony</h4>
     </div>
     <div class="schedule">
